@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap');
+
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; }
+
+:root {
+  --bg: #82c5e6;
+  --surface: #d8d6d6;
+  --surface2: #dedcd7;
+  --border: #E2DDD4;
+  --text: #1A1714;
+  --text2: #6B6560;
+  --text3: #A09890;
+  --accent: #1222cc;
+  --accent-light: #E8F0ED;
+  --black: #000000;
+  --black-light: #DCFCE7;
+  --amber: #D97706;
+  --amber-light: #FEF3C7;
+  --red: #DC2626;
+  --red-light: #c94747;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+}
+
+body { 
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg); 
+  color: var(--text); 
+  min-height: 100vh; }
+.page { 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; }
+
+.header { 
+  background: var(--surface); 
+  border-bottom: 1px solid var(--border); 
+  position: sticky; top: 0; 
+  z-index: 100; }
+.header-inner { 
+  max-width: 900px; 
+  margin: 0 auto; 
+  padding: 0 1.5rem; 
+  height: 60px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; }
+.header-title { 
+  font-weight: 500; 
+  font-size: 15px; 
+  color: var(--text); }
+.header-actions { 
+  display: flex; 
+  gap: 8px; }
+
+.progress-bar-wrap { 
+  height: 3px; 
+  background: var(--border); 
+  width: 100%; }
+.progress-bar-fill { 
+  height: 100%; 
+  background: var(--accent); 
+  transition: width 0.3s; }
+
+.btn-primary { 
+  padding: 8px 18px; 
+  background: var(--accent); 
+  color: white; 
+  border: none; 
+  border-radius: var(--radius-sm); 
+  font-size: 14px; 
+  font-weight: 500; 
+  cursor: pointer; 
+  font-family: inherit; 
+  transition: opacity 0.15s; }
+.btn-primary:hover { opacity: 0.85; }
+.btn-primary:disabled { 
+  opacity: 0.4; 
+  cursor: not-allowed; }
+.btn-outline { 
+  padding: 8px 18px; 
+  background: transparent; 
+  color: var(--accent); 
+  border: 1.5px solid var(--accent); 
+  border-radius: var(--radius-sm); 
+  font-size: 14px; 
+  font-weight: 500; 
+  cursor: pointer; 
+  font-family: inherit; }
+.btn-outline:hover { background: var(--accent-light); }
+.btn-ghost { 
+  padding: 8px 18px; 
+  background: transparent; 
+  color: var(--text2); 
+  border: 1px solid var(--border); 
+  border-radius: var(--radius-sm); 
+  font-size: 14px; 
+  cursor: pointer; 
+  font-family: inherit; }
+.btn-ghost:hover { background: var(--surface2); }
+.btn-danger { 
+  padding: 8px 18px; 
+  background: var(--red); 
+  color: white; 
+  border: none; 
+  border-radius: var(--radius-sm); 
+  font-size: 14px; 
+  font-weight: 500; 
+  cursor: pointer; 
+  font-family: inherit; }
+.btn-back { 
+  background: transparent; 
+  border: none; 
+  color: var(--text2); 
+  font-size: 14px; 
+  cursor: pointer; 
+  font-family: inherit; 
+  padding: 4px 0; }
+.btn-back:hover { color: var(--text); }
+.btn-full { width: 100%; }
+
+.modal-overlay { 
+  position: fixed; 
+  inset: 0; 
+  background: rgba(0,0,0,0.35); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  z-index: 200; 
+  padding: 1rem; }
+.modal { 
+  background: var(--surface); 
+  border-radius: var(--radius); 
+  padding: 1.75rem; 
+  width: 100%; 
+  max-width: 460px; 
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+.modal-sm { max-width: 360px; }
+.modal h2 { 
+  font-family: 'DM Serif Display', serif; font-size: 22px; 
+  margin-bottom: 1.25rem; }
+.modal p { 
+  color: var(--text2); font-size: 14px; 
+  margin-bottom: 1rem; }
+.modal label { 
+  display: block; 
+  font-size: 13px; 
+  font-weight: 500; 
+  color: var(--text2); 
+  margin-bottom: 5px; 
+  margin-top: 1rem; }
+.modal label:first-of-type { margin-top: 0; }
+.modal input, .modal select, .modal textarea { 
+  width: 100%; 
+  padding: 10px 12px; 
+  border: 1px solid var(--border); 
+  border-radius: var(--radius-sm); 
+  font-size: 14px; 
+  font-family: inherit; 
+  color: var(--text); 
+  background: var(--bg); 
+  transition: border-color 0.15s; }
+.modal input:focus, .modal select:focus, .modal textarea:focus { 
+  outline: none; 
+  border-color: var(--accent); }
+.modal textarea { resize: vertical; }
+.modal-actions { 
+  display: flex; 
+  gap: 8px; 
+  justify-content: flex-end; 
+  margin-top: 1.5rem; }
+
+.empty-state { 
+  text-align: center; 
+  padding: 4rem; 
+  color: var(--text3); }
+.study-empty { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 1rem; 
+  flex: 1; 
+  color: var(--text2); }

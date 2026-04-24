@@ -1,0 +1,132 @@
+.logo { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; }
+.logo-icon { 
+  font-size: 20px; 
+  color: var(--accent); }
+.logo-text { 
+  font-family: 'DM Serif Display', serif; 
+  font-size: 20px; 
+  color: var(--text); }
+
+.main { 
+  max-width: 900px; 
+  margin: 0 auto; 
+  padding: 2.5rem 1.5rem; 
+  width: 100%; 
+  flex: 1; }
+
+.section-title { 
+  display: flex; 
+  align-items: baseline; 
+  gap: 12px; 
+  margin-bottom: 1.5rem; }
+.section-title h1 { 
+  font-family: 'Times New Roman', Times, serif; 
+  font-size: 28px; 
+  color: var(--text); }
+.deck-count { 
+  font-size: 13px; 
+  color: var(--text3); 
+  background: var(--surface2); 
+  padding: 2px 10px; 
+  border-radius: 20px; }
+
+.deck-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+  gap: 16px; }
+
+.deck-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.deck-card:hover { 
+  transform: translateY(-2px); 
+  box-shadow: var(--shadow); }
+.deck-card-accent { 
+  height: 4px; 
+  background: var(--accent); }
+.deck-card-body { padding: 1rem 1rem 0.75rem; }
+
+.deck-subject-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+.deck-title { 
+  font-size: 17px; 
+  font-weight: 600; 
+  color: var(--text); 
+  margin-bottom: 4px; 
+  line-height: 1.3; }
+.deck-meta { 
+  font-size: 13px; 
+  color: var(--text3); }
+
+.deck-card-actions { 
+  display: flex; 
+  padding: 0.75rem 1rem; 
+  gap: 6px; 
+  border-top: 1px solid var(--border); 
+  background: var(--surface2); }
+
+.btn-study { 
+  flex: 1; 
+  padding: 6px 10px; 
+  background: var(--accent); 
+  color: white; 
+  border: none; 
+  border-radius: var(--radius-sm); 
+  font-size: 13px; 
+  font-weight: 500; 
+  cursor: pointer; 
+  font-family: inherit; 
+  transition: opacity 0.15s; }
+.btn-study:hover { opacity: 0.85; }
+.btn-quiz { 
+  flex: 1; 
+  padding: 6px 10px; 
+  background: transparent; 
+  color: var(--accent); 
+  border: 1px solid var(--accent); 
+  border-radius: var(--radius-sm); 
+  font-size: 13px; 
+  font-weight: 500; 
+  cursor: pointer; 
+  font-family: inherit; 
+  transition: background 0.15s; }
+.btn-quiz:hover { background: var(--accent-light); }
+.btn-edit { 
+  padding: 6px 10px; 
+  background: transparent; 
+  color: var(--text2); 
+  border: 1px solid var(--border); 
+  border-radius: var(--radius-sm); 
+  font-size: 13px; 
+  cursor: pointer; 
+  font-family: inherit; 
+  transition: background 0.15s; }
+.btn-edit:hover { background: var(--surface); }
+.btn-delete { 
+  padding: 6px 8px; 
+  background: transparent; 
+  color: var(--text3); 
+  border: 1px solid var(--border); 
+  border-radius: var(--radius-sm); 
+  font-size: 12px; 
+  cursor: pointer; 
+  font-family: inherit; 
+  transition: color 0.15s, border-color 0.15s; }
+.btn-delete:hover { 
+  color: var(--red); 
+  border-color: var(--red); }
