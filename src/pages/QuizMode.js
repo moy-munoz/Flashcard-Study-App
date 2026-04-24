@@ -157,7 +157,6 @@ export default function QuizMode() {
                   </button>
                 )}
               </div>
-              <p className="hint-text">Tip: Ctrl+Enter to submit / advance</p>
             </div>
           </motion.div>
         </AnimatePresence>
