@@ -48,7 +48,7 @@
   outline: none; 
   border-color: var(--accent); }
 .input-correct { 
-  border-color: var(-black) !important; 
+  border-color: var(--black) !important; 
   background: var(--black-light) !important; }
 .input-wrong { border-color: var(--red) !important; }
 
@@ -58,7 +58,7 @@
   font-size: 14px; }
 .feedback-correct { 
   background: var(--black-light); 
-  color: var(-black); }
+  color: var(--black); }
 .feedback-wrong { 
   background: var(--red-light); 
   color: var(--red); }
@@ -66,7 +66,7 @@
   margin-top: 4px; 
   color: var(--text); 
   font-size: 13px; }
-.correct-ans strong { color: var(-black); }
+.correct-ans strong { color: var(--black); }
 
 .quiz-actions { display: flex; }
 .hint-text { 
@@ -101,15 +101,15 @@
   font-weight: 700; 
   flex-shrink: 0; 
   margin-top: 1px; }
-.result-correct .result-icon { color: var(-black); }
+.result-correct .result-icon { color: var(--black); }
 .result-wrong .result-icon { color: var(--red); }
 .result-q { 
   font-weight: 500; 
   margin-bottom: 2px; }
 .result-user { 
-  color: var(--text2); 
+  color: var(--black); 
   font-style: italic; 
   margin-bottom: 2px; }
 .result-ans { 
-  color: var(-black); 
+  color: var(--black); 
   font-weight: 500; }

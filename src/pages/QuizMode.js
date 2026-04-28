@@ -138,7 +138,6 @@ export default function QuizMode() {
                       <p>Correct!</p>
                     ) : (
                       <>
-                        <p>Not quite...</p>
                         <p className="correct-ans">Correct answer: <strong>{card.back}</strong></p>
                       </>
                     )}
