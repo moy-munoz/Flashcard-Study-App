@@ -71,7 +71,8 @@ export default function StudyMode() {
           <div className="done-actions">
             <button className="btn-ghost" onClick={() => navigate('/')}>Back to Decks</button>
             <button className="btn-primary" onClick={() => navigate(`/quiz/${id}`)}>Take Quiz</button>
-            <button className="btn-outline" onClick={() => { setIndex(0); setFlipped(false); setKnown([]); setLearning([]); setDone(false); }}>
+            <button className="btn-outline" onClick={() => 
+              { setIndex(0); setFlipped(false); setKnown([]); setLearning([]); setDone(false); }}>
               Study Again
             </button>
           </div>
@@ -126,7 +127,8 @@ export default function StudyMode() {
 
         <AnimatePresence>
           {flipped && (
-            <motion.div className="study-actions" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+            <motion.div className="study-actions" initial={{ opacity: 0, y: 10 }} 
+            animate={{ opacity: 1, y: 0 }}>
               <button className="btn-learning" onClick={() => goNext('learning')}>
                 Still Learning
               </button>

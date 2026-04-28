@@ -61,7 +61,8 @@ export default function DeckEditor() {
                 value={deckTitle}
                 onChange={e => setDeckTitle(e.target.value)}
                 onBlur={() => { updateDeck(id, { title: deckTitle }); setEditingDeckName(false); }}
-                onKeyDown={e => { if (e.key === 'Enter') { updateDeck(id, { title: deckTitle }); setEditingDeckName(false); } }}
+                onKeyDown={e => { if (e.key === 'Enter') { updateDeck(id, 
+                  { title: deckTitle }); setEditingDeckName(false); } }}
               />
             </div>
           ) : (
@@ -69,7 +70,8 @@ export default function DeckEditor() {
               {deck.title} <span className="edit-hint">✎</span>
             </h1>
           )}
-          <p className="editor-meta">{deck.cards.length} card{deck.cards.length !== 1 ? 's' : ''} · Click title to rename</p>
+          <p className="editor-meta">{deck.cards.length} card{deck.cards.length !== 1 ? 's' : ''} · 
+            Click title to rename</p>
         </div>
 
         <button className="add-card-btn" onClick={openNew}>+ Add Card</button>
@@ -92,7 +94,8 @@ export default function DeckEditor() {
                 </div>
                 <div className="card-row-actions">
                   <button className="btn-icon" onClick={() => openEdit(card)}>✎</button>
-                  <button className="btn-icon btn-icon-danger" onClick={() => deleteCard(id, card.id)}>✕</button>
+                  <button className="btn-icon btn-icon-danger" onClick={() => 
+                    deleteCard(id, card.id)}>✕</button>
                 </div>
               </motion.div>
             ))}
@@ -108,9 +111,11 @@ export default function DeckEditor() {
 
       <AnimatePresence>
         {editingCard && (
-          <motion.div className="modal-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+          <motion.div className="modal-overlay" initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={() => setEditingCard(null)}>
-            <motion.div className="modal" initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
+            <motion.div className="modal" initial={{ scale: 0.9, opacity: 0 }} 
+            animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }} onClick={e => e.stopPropagation()}>
               <h2>{editingCard === 'new' ? 'Add Card' : 'Edit Card'}</h2>
               <label>Front (Question / Term)</label>
@@ -130,7 +135,8 @@ export default function DeckEditor() {
               />
               <div className="modal-actions">
                 <button className="btn-ghost" onClick={() => setEditingCard(null)}>Cancel</button>
-                <button className="btn-primary" onClick={save} disabled={!front.trim() || !back.trim()}>
+                <button className="btn-primary" onClick={save} 
+                disabled={!front.trim() || !back.trim()}>
                   {editingCard === 'new' ? 'Add Card' : 'Save Changes'}
                 </button>
               </div>

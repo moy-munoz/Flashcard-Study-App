@@ -5,11 +5,11 @@ import { useDecks } from '../hooks/usedecks';
 import './Dashboard.css';
 
 const SUBJECT_COLORS = {
-  'Programming': '#4F46E5',
-  'Frontend': '#0891B2',
+  'Comp Sci': '#4F46E5',
+  'History': '#0891B2',
   'Math': '#D97706',
   'Science': '#16A34A',
-  'Language': '#9333EA',
+  'English': '#9333EA',
   'General': '#6B7280',
 };
 
@@ -82,12 +82,14 @@ export default function Dashboard() {
               >
                 <div className="deck-card-accent" />
                 <div className="deck-card-body">
-                  <div className="deck-subject-badge" style={{ background: getColor(deck.subject) + '20', color: getColor(deck.subject) }}>
+                  <div className="deck-subject-badge" style={{ background: 
+                    getColor(deck.subject) + '20', color: getColor(deck.subject) }}>
                     {deck.subject}
                   </div>
                   <h2 className="deck-title">{deck.title}</h2>
                   <p className="deck-meta">
-                    {deck.cards.length} card{deck.cards.length !== 1 ? 's' : ''} · {timeAgo(deck.lastStudied)}
+                    {deck.cards.length} card{deck.cards.length !== 1 ? 's' : ''} · 
+                    {timeAgo(deck.lastStudied)}
                   </p>
                 </div>
                 <div className="deck-card-actions">
@@ -112,9 +114,11 @@ export default function Dashboard() {
 
       <AnimatePresence>
         {showNew && (
-          <motion.div className="modal-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+          <motion.div className="modal-overlay" initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={() => setShowNew(false)}>
-            <motion.div className="modal" initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
+            <motion.div className="modal" initial={{ scale: 0.9, opacity: 0 }} 
+            animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }} onClick={e => e.stopPropagation()}>
               <h2>Create New Deck</h2>
               <label>Deck Name</label>
@@ -132,7 +136,8 @@ export default function Dashboard() {
               </select>
               <div className="modal-actions">
                 <button className="btn-ghost" onClick={() => setShowNew(false)}>Cancel</button>
-                <button className="btn-primary" onClick={handleCreate} disabled={!newTitle.trim()}>Create Deck</button>
+                <button className="btn-primary" onClick={handleCreate} 
+                disabled={!newTitle.trim()}>Create Deck</button>
               </div>
             </motion.div>
           </motion.div>
@@ -141,15 +146,18 @@ export default function Dashboard() {
 
       <AnimatePresence>
         {deleteConfirm && (
-          <motion.div className="modal-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+          <motion.div className="modal-overlay" initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={() => setDeleteConfirm(null)}>
-            <motion.div className="modal modal-sm" initial={{ scale: 0.9 }} animate={{ scale: 1 }} exit={{ scale: 0.9 }}
+            <motion.div className="modal modal-sm" initial={{ scale: 0.9 }} 
+            animate={{ scale: 1 }} exit={{ scale: 0.9 }}
               onClick={e => e.stopPropagation()}>
               <h2>Delete Deck?</h2>
               <p>This will permanently delete this deck and all its cards.</p>
               <div className="modal-actions">
                 <button className="btn-ghost" onClick={() => setDeleteConfirm(null)}>Cancel</button>
-                <button className="btn-danger" onClick={() => { deleteDeck(deleteConfirm); setDeleteConfirm(null); }}>Delete</button>
+                <button className="btn-danger" onClick={() => { deleteDeck(deleteConfirm); 
+                  setDeleteConfirm(null); }}>Delete</button>
               </div>
             </motion.div>
           </motion.div>
